@@ -5,7 +5,7 @@
 ### on Your Machine
 
 ```
-$ AWS_ACCESS_KEY_ID=XXXXX AWS_SECRET_ACCESS_KEY= XXXXX ./aws-auth-proxy -dest "https://search.....es.amazonaws.com"
+$ AWS_ACCESS_KEY_ID=XXXXX AWS_SECRET_ACCESS_KEY=XXXXX ./aws-auth-proxy -dest "https://search.....es.amazonaws.com"
 ```
 
 ### on EC2 with IAM Role
@@ -14,7 +14,7 @@ $ AWS_ACCESS_KEY_ID=XXXXX AWS_SECRET_ACCESS_KEY= XXXXX ./aws-auth-proxy -dest "h
 $ ./aws-auth-proxy -dest "https://search.....es.amazonaws.com"
 ```
 
-example IAM Role Policy
+### IAM Policy example
 
 ```
 {
@@ -26,12 +26,10 @@ example IAM Role Policy
                 "es:ESHttp*"
             ],
             "Resource": [
-                "arn:aws:es:<region>:<account>:domain/<domain>"
+                "arn:aws:es:<region>:<account>:domain/<domain>/*"
             ]
         }
     ]
 }
 ```
-
-
 
